@@ -1,0 +1,48 @@
+{
+    "name": "vscode-colab-integration",
+    "version": "1.0.0",
+    "description": "A VS Code extension for integrating with Google Colab.",
+    "main": "./src/extension.ts",
+    "scripts": {
+        "compile": "tsc -p ./tsconfig.json",
+        "watch": "tsc -watch -p ./tsconfig.json",
+        "prepublish": "npm run compile"
+    },
+    "keywords": [
+        "vscode",
+        "extension",
+        "google",
+        "colab",
+        "integration"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+        "googleapis": "^39.2.0",
+        "axios": "^0.21.1"
+    },
+    "devDependencies": {
+        "typescript": "^4.0.0",
+        "vscode": "^1.1.37",
+        "ts-loader": "^8.0.0"
+    },
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "activationEvents": [
+        "onCommand:colab.connect",
+        "onCommand:colab.runNotebook"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "colab.connect",
+                "title": "Connect to Google Colab"
+            },
+            {
+                "command": "colab.runNotebook",
+                "title": "Run Notebook in Google Colab"
+            }
+        ]
+    }
+}

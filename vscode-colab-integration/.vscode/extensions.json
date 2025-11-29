@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "googlecloudtools.cloudcode",
+        "ms-vscode.vscode-typescript-tslint-plugin"
+    ]
+}
