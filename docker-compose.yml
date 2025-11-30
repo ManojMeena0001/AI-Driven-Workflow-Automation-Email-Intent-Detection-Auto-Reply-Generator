@@ -1,0 +1,39 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # 1. Database Service (Standard MySQL container)
+  db_service:
+    image: mysql:8.0
+    container_name: ai_mysql_db
+    # Environment variables are passed to the container's shell
+    environment:
+      MYSQL_ROOT_PASSWORD: secret_password  # Used by db_connector.py
+      MYSQL_DATABASE: automation_db         # Used by db_connector.py
+    # Expose the port so you can view the database from your host machine (optional)
+    ports:
+      - "3306:3306" 
+    # Use a persistent volume to ensure data remains even if the container is stopped
+    volumes:
+      - mysql_data:/var/lib/mysql 
+      
+  # 2. Application Service (Your Python Code)
+  app_service:
+    build: . # Build this container using the Dockerfile in the current directory
+    container_name: ai_intent_app
+    # Environment variables for the app to connect to the DB
+    environment:
+      DB_HOST: db_service       # Hostname resolves to the container named db_service
+      DB_USER: root             # Matches MYSQL_ROOT_PASSWORD above
+      DB_PASSWORD: secret_password 
+      DB_NAME: automation_db
+    # Ensure app_service waits until db_service has started
+    depends_on:
+      - db_service
+    # Map the local data/model folders to the container's folders
+    volumes:
+      - ./data:/app/data
+      - ./model:/app/model
+
+volumes:
+  mysql_data: # Define the persistent volume

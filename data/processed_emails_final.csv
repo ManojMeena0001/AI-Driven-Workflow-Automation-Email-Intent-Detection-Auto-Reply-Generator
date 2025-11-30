@@ -1,0 +1,37 @@
+id,from,subject,intent,confidence,needs_review,auto_reply_text
+101,john.doe@tech.com,Question about pricing and quotes,support_issue,0.27,True,"Hi john.doe,
+
+We apologize for the issue. Your request has been escalated to our technical support team (TICKET-1). We will update you shortly.
+
+Thank you,
+Support Desk"
+102,support@client.com,System Down,support_issue,0.35,True,"Hi support,
+
+We apologize for the issue. Your request has been escalated to our technical support team (TICKET-2). We will update you shortly.
+
+Thank you,
+Support Desk"
+103,jane.smith@mail.com,Where is my invoice,support_issue,0.35,True,"Hi jane.smith,
+
+We apologize for the issue. Your request has been escalated to our technical support team (TICKET-3). We will update you shortly.
+
+Thank you,
+Support Desk"
+104,peter.parker@corp.org,Partnership idea,support_issue,0.30,True,"Hi peter.parker,
+
+We apologize for the issue. Your request has been escalated to our technical support team (TICKET-4). We will update you shortly.
+
+Thank you,
+Support Desk"
+105,random@spam.net,I want to unsubscribe,cancellation,0.46,True,"Hi random,
+
+Your cancellation request has been received and processed. We're sorry to see you go.
+
+Thanks,
+Team"
+106,test@user.co,General Inquiry,support_issue,0.33,True,"Hi test,
+
+We apologize for the issue. Your request has been escalated to our technical support team (TICKET-6). We will update you shortly.
+
+Thank you,
+Support Desk"
